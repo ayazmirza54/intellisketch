@@ -37,7 +37,7 @@ function App() {
       const formData = new FormData();
       formData.append("image", blob, "canvas.png");
 
-      const response = await fetch("http://localhost:8900/calculate", {
+      const response = await fetch("https://intellisketch.onrender.com/calculate", {
         method: "POST",
         body: formData,
       });
