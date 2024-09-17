@@ -57,12 +57,15 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden relative">
-      <div className="absolute inset-0 z-0">
+    <div className="h-screen w-screen overflow-hidden bg-[#121212] relative">
+      <div className="absolute h-[85%] inset-0 z-0">
         <Excalidraw 
          excalidrawAPI={onExcalidrawAPIChange}
          onChange={handleChange} 
-         UIOptions={{ canvasActions: { loadLibrary: false } }}
+         UIOptions={{ 
+           canvasActions: { loadLibrary: false },
+           position: "bottom-right",
+         }}
          theme={isDarkTheme ? "dark" : "light"} // Set the theme prop
          initialData={{
            appState: { theme: "dark" } // Set initial app state to dark theme
@@ -74,7 +77,7 @@ function App() {
            
             <WelcomeScreen.Center.Menu>
               
-              <WelcomeScreen.Center.MenuItemLink icon={<FaGithub />} href="https://github.com/ayazmirza/intellisketch">
+              <WelcomeScreen.Center.MenuItemLink icon={<FaGithub />} href="https://github.com/ayazmirza54/intellisketch">
                 Intellisketch GitHub
               </WelcomeScreen.Center.MenuItemLink>
               <WelcomeScreen.Center.MenuItemHelp />
@@ -95,7 +98,7 @@ function App() {
       {/* Evaluate with AI button */}
       <button
         onClick={handleEvaluate}
-        className={`absolute bottom-6 right-6 font-bold py-2 px-6 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ease-in-out z-10 ${
+        className={`absolute bottom-20 right-6 sm:bottom-6 font-bold py-2 px-6 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ease-in-out z-10 ${
           isDarkTheme
             ? 'bg-white text-gray-800 hover:bg-gray-100 border border-gray-300'
             : 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-600'
