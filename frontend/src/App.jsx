@@ -107,7 +107,7 @@ function App() {
       >
         {isLoading ? (
           <div className={`animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 mr-2 ${
-            isDarkTheme ? 'border-white' : 'border-gray-800'
+            isDarkTheme ? 'border-black' : 'border-gray-800'
           }`}></div>
         ) : (
           <img src={aiicon} alt="AI" className={`w-5 h-5 mr-2 ${isDarkTheme ? 'invert' : ''}`} />
